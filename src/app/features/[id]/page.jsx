@@ -31,8 +31,8 @@ const page = ({ params }) => {
     const id = params?.id
 
     const singleData = features.find(features => features._id === id)
-    return (
-        <div>
+    if (singleData) {
+        return (
             <div className="card bg-base-100 w-96 shadow-sm">
                 <div className="card-body">
                     <h2 className="card-title">{singleData?.service_name}</h2>
@@ -43,8 +43,14 @@ const page = ({ params }) => {
                         alt="Shoes" />
                 </figure>
             </div>
-        </div>
-    );
+        );
+    } else {
+        return (
+            <div>
+                <p className='text-red-400'>Your requested data not found</p>
+            </div>
+        )
+    }
 };
 
 export default page;
