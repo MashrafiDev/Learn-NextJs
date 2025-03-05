@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
 export function middleware(request) {
-  let cookie = request.cookies.get("nextjs-cookie");
-  console.log(cookie.value);
+  let cookie = request?.cookies?.get("nextjs-cookie");
+  console.log(cookie?.value);
 
   const featuresPage = request.nextUrl.pathname.startsWith("/features");
   const aboutPage = request.nextUrl.pathname.startsWith("/About:/path");
