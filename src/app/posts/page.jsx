@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const loadPosts = async () => {
@@ -17,6 +18,7 @@ const posts = async () => {
                         <p>userId: {userId}</p>
                         <p>title: {title}</p>
                         <p>body: {body}</p>
+                        <button className='btn btn-info mt-2'><Link href={`/posts/${id}`}>Details</Link></button>
                     </div>
                 ))
             }
